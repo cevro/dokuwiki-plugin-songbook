@@ -1,0 +1,107 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 5, 2016, 11:58:42 PM
+    Author     : root
+*/
+
+
+song{
+    title{
+        
+        display: inline-block;
+       
+    }
+    author{ 
+         &:not(:empty):before{
+            content: ' by: ';
+        }
+        &:not(:empty){
+             padding-left: 1em;
+        }
+        
+       
+
+    }
+    album{
+        
+        &:not(:empty):before{
+            content: ' album: ';
+        }
+       &:not(:empty){
+             padding-left: 1em;
+        }
+      
+
+    }
+    album,author,title{
+          font-size: 180%;
+        color: @ini_text_alt;
+    }
+
+    chord {
+
+        font-weight: bold;
+        color: @ini_text_alt;
+
+        position: relative;
+        bottom: 1em;
+        width: 0px;
+        display: inline-block;
+        overflow: visible;
+
+    }
+
+
+    text>* {
+        &:before{
+            position: absolute;
+            left: -2em;
+        }
+        min-height: 2em;
+        line-height:2em;
+        position: relative;
+        margin-top: 2em;
+        display: block;
+    }
+
+    strophe {
+
+        &:before {
+            content: counter(strophe) ". ";
+            counter-increment: strophe;
+
+        }
+
+
+    }
+
+
+
+    rfr{
+        &:before{
+            content:"R: ";
+            font-weight:bold;
+        }
+
+    }
+
+
+    text{
+        counter-reset: strophe;
+          display: block;
+        display: none;
+
+
+    
+
+        margin-left: 3em;
+
+    } 
+    
+    display: block;
+    margin-top: 1em;
+}
